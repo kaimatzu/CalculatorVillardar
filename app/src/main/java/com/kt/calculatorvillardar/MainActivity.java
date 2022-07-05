@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         digitButtonListenerMethod();
         operationButtonListenerMethod();
+        deleteButtonListenerMethod();
     }
 
     public void digitButtonListenerMethod() {
@@ -68,5 +69,30 @@ public class MainActivity extends AppCompatActivity {
         btnSubtract.setOnClickListener(operationListener);
         btnMultiply.setOnClickListener(operationListener);
         btnDivide.setOnClickListener(operationListener);
+    }
+
+    public void deleteButtonListenerMethod() {
+        View.OnClickListener deleteListener  = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText etSpace = findViewById(R.id.etSpace);
+                Button btn = (Button) v;
+                Log.d("Ops", btn.getText().toString());
+                switch(btn.getText().toString()){
+                    case "Back":
+                        String text = etSpace.getText().toString();
+                        etSpace.setText(text.substring(0, text.length() - 1));
+                        break;
+                    case "C":
+                        etSpace.setText("0");
+                }
+            }
+        };
+
+        Button btnBack = findViewById(R.id.btnBack);
+        Button btnClear = findViewById(R.id.btnClear);
+
+        btnBack.setOnClickListener(deleteListener);
+        btnClear.setOnClickListener(deleteListener);
     }
 }
