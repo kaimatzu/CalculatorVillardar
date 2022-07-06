@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText etSpace = findViewById(R.id.etSpace);
                 Button btn = (Button) view;
+                if(prev_op == R.id.btnEquals){
+                    prev_num = 0;
+                    cleared = true;
+                }
+
                 if(clear_field){
                     clear_field = false;
                     etSpace.setText("0");
@@ -73,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
                 Button btn = (Button) v;
                 String text = etSpace.getText().toString();
                 int num = Integer.parseInt(text);
-//                if(num != prev_num)
-//                    prev_num = num;
-                if(prev_op == R.id.btnEquals)
+                if(prev_op == R.id.btnEquals){
                     prev_num = 0;
+                    cleared = true;
+                }
                 switch (btn.getId()){
                     case R.id.btnAdd:
                         if(cleared){

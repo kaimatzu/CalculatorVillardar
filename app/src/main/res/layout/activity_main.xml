@@ -4,93 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/etSpace"
-        android:layout_width="395dp"
-        android:layout_height="102dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:ems="10"
         android:inputType="numberSigned"
         android:text="@string/_0"
         android:textAlignment="viewEnd"
-        android:textSize="48sp"
         android:textColor="@color/white"
+        android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TableLayout
-        android:layout_width="389dp"
+        android:layout_width="match_parent"
         android:layout_height="430dp"
-        android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSpace">
+        app:layout_constraintTop_toBottomOf="@+id/etSpace"
+        app:layout_constraintVertical_bias="0.83">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn7"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_7" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_7"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn8"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_8" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_8"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn9"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_9" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_9"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnDivide"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/div" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background_yellow"
+                android:text="@string/div"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="0dp"
             android:layout_margin="0dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="0dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn4"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_4" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_4"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn5"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_5" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_5"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn6"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_6" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_6"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMultiply"
-                android:layout_width="85dp"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/mul" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background_yellow"
+                android:text="@string/mul"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -98,29 +147,53 @@
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn1"
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_1" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_1"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn2"
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_2" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_2"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn3"
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_3" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background"
+                android:text="@string/_3"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSubtract"
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/sub" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background_yellow"
+                android:text="@string/sub"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -128,29 +201,31 @@
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/btnClear"
-                android:layout_width="wrap_content"
-                android:layout_height="85dp"
-                android:text="@string/c" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn0"
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/_0" />
+                android:layout_weight="75"
+                android:background="@drawable/round_background"
+                android:text="@string/_0"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
-            <Button
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="85dp"
-                android:text="@string/back" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAdd"
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/add" />
+                android:layout_weight="25"
+                android:background="@drawable/round_background_yellow"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -158,11 +233,39 @@
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/btnEquals"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClear"
+                android:layout_width="0px"
                 android:layout_height="85dp"
-                android:text="@string/equals" />
+                android:layout_weight="35"
+                android:background="@drawable/round_background_gray"
+                android:text="@string/c"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBack"
+                android:layout_width="0px"
+                android:layout_height="85dp"
+                android:layout_weight="25"
+                android:background="@drawable/round_background_gray"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEquals"
+                android:layout_width="0px"
+                android:layout_height="85dp"
+                android:layout_weight="45"
+                android:background="@drawable/round_background_yellow"
+                android:text="@string/equals"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
     </TableLayout>
 
