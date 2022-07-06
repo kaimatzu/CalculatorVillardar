@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black">
 
     <EditText
         android:id="@+id/etSpace"
@@ -15,6 +16,7 @@
         android:text="@string/_0"
         android:textAlignment="viewEnd"
         android:textSize="48sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +33,8 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn7"
@@ -55,12 +58,15 @@
                 android:id="@+id/btnDivide"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
-                android:text="/" />
+                android:text="@string/div" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn4"
@@ -84,12 +90,13 @@
                 android:id="@+id/btnMultiply"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
-                android:text="*" />
+                android:text="@string/mul" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn1"
@@ -113,12 +120,13 @@
                 android:id="@+id/btnSubtract"
                 android:layout_width="wrap_content"
                 android:layout_height="85dp"
-                android:text="-" />
+                android:text="@string/sub" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btnClear"
@@ -136,13 +144,25 @@
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="85dp"
-                android:text="Back" />
+                android:text="@string/back" />
 
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="85dp"
-                android:text="+" />
+                android:text="@string/add" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnEquals"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:text="@string/equals" />
         </TableRow>
     </TableLayout>
 

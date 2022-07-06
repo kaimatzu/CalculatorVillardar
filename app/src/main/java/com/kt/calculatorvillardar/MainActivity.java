@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    public int prev_num = 0, res = 0, prev_op = 0;
+    public boolean clear_field = false, cleared = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText etSpace = findViewById(R.id.etSpace);
                 Button btn = (Button) view;
+                if(clear_field){
+                    clear_field = false;
+                    etSpace.setText("0");
+                }
+                if(prev_op == R.id.btnEquals){
+                    prev_op = 0;
+                    prev_num = 0;
+                }
                 etSpace.setText(etSpace.getText() + "" + btn.getText());
+                String text = etSpace.getText().toString();
+                if(text.substring(0,1).equals("0") && text.length() > 1){
+                    etSpace.setText(text.substring(1));
+                }
             }
         };
 
@@ -55,8 +69,90 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener operationListener  = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText etSpace = findViewById(R.id.etSpace);
                 Button btn = (Button) v;
-                Log.d("Ops", btn.getText().toString());
+                String text = etSpace.getText().toString();
+                int num = Integer.parseInt(text);
+//                if(num != prev_num)
+//                    prev_num = num;
+                if(prev_op == R.id.btnEquals)
+                    prev_num = 0;
+                switch (btn.getId()){
+                    case R.id.btnAdd:
+                        if(cleared){
+                            res = num;
+                            cleared = false;
+                        }
+                        else
+                            res = prev_num + num;
+                        prev_num = res;
+                        prev_op = R.id.btnAdd;
+                        clear_field = true;
+                        break;
+                    case R.id.btnSubtract:
+                        if(cleared){
+                            res = num;
+                            cleared = false;
+                        }
+                        else
+                            res = prev_num - num;
+                        prev_num = res;
+                        prev_op = R.id.btnSubtract;
+                        clear_field = true;
+                        break;
+                    case R.id.btnMultiply:
+                        if(cleared){
+                            res = num;
+                            cleared = false;
+                        }
+                        else
+                            res = prev_num * num;
+                        prev_num = res;
+                        prev_op = R.id.btnMultiply;
+                        clear_field = true;
+                        break;
+                    case R.id.btnDivide:
+                        if(cleared){
+                            res = num;
+                            cleared = false;
+                        }
+                        else
+                            res = prev_num / num;
+                        prev_num = res;
+                        prev_op = R.id.btnDivide;
+                        clear_field = true;
+                        break;
+                    case R.id.btnEquals:
+                        switch (prev_op){
+                            case R.id.btnAdd:
+                                res = prev_num + num;
+                                break;
+                            case R.id.btnSubtract:
+                                res = prev_num - num;
+                                break;
+                            case R.id.btnMultiply:
+                                res = prev_num * num;
+                                break;
+                            case R.id.btnDivide:
+                                res = prev_num / num;
+                                break;
+                        }
+//                        if(prev_op == R.id.btnAdd)
+//                            res = prev_num + num;
+                        etSpace.setText(res + "");
+                        prev_op = R.id.btnEquals;
+                        clear_field = true;
+                        return;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + btn.getText().toString());
+                }
+                etSpace.setText(res + "");
+//                if(prev_num == 0)
+//                    etSpace.setText(res + "");
+                //etSpace.setText("0");
+                Button prev = (Button) findViewById(prev_op);
+                Log.d("prev_op", prev.getText().toString());
+                Log.d("prev_num", String.valueOf(prev_num));
             }
         };
 
@@ -64,11 +160,13 @@ public class MainActivity extends AppCompatActivity {
         Button btnSubtract = findViewById(R.id.btnSubtract);
         Button btnMultiply = findViewById(R.id.btnMultiply);
         Button btnDivide = findViewById(R.id.btnDivide);
+        Button btnEquals = findViewById(R.id.btnEquals);
 
         btnAdd.setOnClickListener(operationListener);
         btnSubtract.setOnClickListener(operationListener);
         btnMultiply.setOnClickListener(operationListener);
         btnDivide.setOnClickListener(operationListener);
+        btnEquals.setOnClickListener(operationListener);
     }
 
     public void deleteButtonListenerMethod() {
@@ -77,13 +175,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText etSpace = findViewById(R.id.etSpace);
                 Button btn = (Button) v;
-                Log.d("Ops", btn.getText().toString());
-                switch(btn.getText().toString()){
-                    case "Back":
+                switch(btn.getId()){
+                    case R.id.btnBack:
                         String text = etSpace.getText().toString();
-                        etSpace.setText(text.substring(0, text.length() - 1));
+                        if(text.length() == 1)
+                            etSpace.setText("0");
+                        else
+                            etSpace.setText(text.substring(0, text.length() - 1));
                         break;
-                    case "C":
+                    case R.id.btnClear:
+                        prev_op = 0;
+                        prev_num = 0;
+                        cleared = true;
                         etSpace.setText("0");
                 }
             }

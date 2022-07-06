@@ -11,4 +11,10 @@
     <string name="_5">5</string>
     <string name="_3">3</string>
     <string name="c">C</string>
+    <string name="div">/</string>
+    <string name="back">Back</string>
+    <string name="mul">*</string>
+    <string name="add">+</string>
+    <string name="equals">=</string>
+    <string name="sub">-</string>
 </resources>
